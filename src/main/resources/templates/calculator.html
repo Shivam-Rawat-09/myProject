@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Proforma Disbursement Account Calculator</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="/css/style.css" />
+</head>
+<body>
+<div class="container">
+    <h1>Proforma Disbursement Account Calculator</h1>
+    <form th:action="@{/calculate}" method="post">
+        <div class="form-group">
+            <label for="port">Port</label>
+            <select id="port" name="portId" required>
+                <option th:each="port : ${ports}" th:value="${port.id}" th:text="${port.name}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="vessel">Vessel</label>
+            <select id="vessel" name="vesselId" required>
+                <option th:each="vessel : ${vessels}" th:value="${vessel.id}" th:text="${vessel.name}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="cargoType">Cargo Type</label>
+            <select id="cargoType" name="cargoTypeId" required>
+                <option th:each="cargoType : ${cargoTypes}" th:value="${cargoType.id}" th:text="${cargoType.name}"></option>
+            </select>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Service Name</th>
+                    <th>Calculation Basis</th>
+                    <th>Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="rate : ${serviceRates}">
+                    <td th:text="${rate.serviceName}"></td>
+                    <td th:text="${rate.calculationBasis}"></td>
+                    <td>
+                        <input type="text" class="rate-input" th:name="'overrides[' + ${rate.serviceName} + ']'" th:value="${rate.rate}" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button type="submit">Calculate</button>
+    </form>
+</div>
+</body>
+</html> 

@@ -1,0 +1,106 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 0;
+    color: #222;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 32px 40px 40px 40px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 32px;
+    color: #2a3b4c;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+label {
+    min-width: 120px;
+    font-weight: 500;
+    color: #2a3b4c;
+}
+
+select, input[type="text"], input[type="number"] {
+    padding: 8px 12px;
+    border: 1px solid #cfd8dc;
+    border-radius: 4px;
+    font-size: 1rem;
+    background: #f9fafb;
+    transition: border 0.2s;
+}
+
+select:focus, input:focus {
+    border-color: #1976d2;
+    outline: none;
+}
+
+button[type="submit"] {
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+    background: #125ea2;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+    background: #fafbfc;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 10px;
+    text-align: left;
+}
+
+th {
+    background: #e3eaf2;
+    color: #2a3b4c;
+    font-weight: 600;
+    border-bottom: 2px solid #cfd8dc;
+}
+
+td {
+    border-bottom: 1px solid #e0e4e8;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+input[type="text"].rate-input {
+    width: 80px;
+    text-align: right;
+} 
